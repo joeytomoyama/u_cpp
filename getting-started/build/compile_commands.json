@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/joey/Studium/6semester/cpp/repos/getting-started/build",
+  "command": "/usr/bin/g++   -g -std=gnu++14 -o CMakeFiles/mein_programm.dir/main.cpp.o -c /home/joey/Studium/6semester/cpp/repos/getting-started/main.cpp",
+  "file": "/home/joey/Studium/6semester/cpp/repos/getting-started/main.cpp"
+},
+{
+  "directory": "/home/joey/Studium/6semester/cpp/repos/getting-started/build",
+  "command": "/usr/bin/g++   -g -std=gnu++14 -o CMakeFiles/mein_programm.dir/dummy.cpp.o -c /home/joey/Studium/6semester/cpp/repos/getting-started/dummy.cpp",
+  "file": "/home/joey/Studium/6semester/cpp/repos/getting-started/dummy.cpp"
+}
+]
