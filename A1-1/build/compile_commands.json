@@ -8,5 +8,10 @@
   "directory": "/home/joey/Studium/6semester/cpp/u_cpp/A1-1/build",
   "command": "/usr/bin/g++   -g -std=gnu++14 -o CMakeFiles/mein_programm.dir/vec3f.cpp.o -c /home/joey/Studium/6semester/cpp/u_cpp/A1-1/vec3f.cpp",
   "file": "/home/joey/Studium/6semester/cpp/u_cpp/A1-1/vec3f.cpp"
+},
+{
+  "directory": "/home/joey/Studium/6semester/cpp/u_cpp/A1-1/build",
+  "command": "/usr/bin/g++   -g -std=gnu++14 -o CMakeFiles/mein_programm.dir/test11.cpp.o -c /home/joey/Studium/6semester/cpp/u_cpp/A1-1/test11.cpp",
+  "file": "/home/joey/Studium/6semester/cpp/u_cpp/A1-1/test11.cpp"
 }
 ]

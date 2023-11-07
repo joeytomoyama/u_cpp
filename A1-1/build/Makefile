@@ -153,6 +153,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mein_programm.dir/build.make CMakeFiles/mein_programm.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+test11.o: test11.cpp.o
+.PHONY : test11.o
+
+# target to build an object file
+test11.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mein_programm.dir/build.make CMakeFiles/mein_programm.dir/test11.cpp.o
+.PHONY : test11.cpp.o
+
+test11.i: test11.cpp.i
+.PHONY : test11.i
+
+# target to preprocess a source file
+test11.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mein_programm.dir/build.make CMakeFiles/mein_programm.dir/test11.cpp.i
+.PHONY : test11.cpp.i
+
+test11.s: test11.cpp.s
+.PHONY : test11.s
+
+# target to generate assembly for a file
+test11.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mein_programm.dir/build.make CMakeFiles/mein_programm.dir/test11.cpp.s
+.PHONY : test11.cpp.s
+
 vec3f.o: vec3f.cpp.o
 .PHONY : vec3f.o
 
@@ -189,6 +213,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... test11.o"
+	@echo "... test11.i"
+	@echo "... test11.s"
 	@echo "... vec3f.o"
 	@echo "... vec3f.i"
 	@echo "... vec3f.s"
