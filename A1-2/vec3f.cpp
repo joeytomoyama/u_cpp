@@ -7,7 +7,7 @@ Vec3f::Vec3f(float x, float y, float z)
     : myArray_{x, y, z}
 {}
 
-float& Vec3f::operator[] (const int& idx)
+float& Vec3f::operator[] (int idx)
 {
     return myArray_[idx];
 }
@@ -45,16 +45,16 @@ Vec3f Vec3f::operator+= (const Vec3f& rhs)
     return *this;
 }
 
-Vec3f Vec3f::operator-() const
-{
-    return Vec3f{-myArray_[0], -myArray_[1], -myArray_[2]};
-}
-
 std::string Vec3f::toString() const
 {
     std::stringstream ss;
     ss << "{ " << myArray_[0] << ", " << myArray_[1] << ", " << myArray_[2] << " }";
     return ss.str();
+}
+
+Vec3f Vec3f::operator-() const
+{
+    return Vec3f{-myArray_[0], -myArray_[1], -myArray_[2]};
 }
 
 float dot(const Vec3f& a, const Vec3f& b)

@@ -1,0 +1,3 @@
+/home/joey/Studium/6semester/cpp/u_cpp/A1-2/build/CMakeFiles/mein_programm.dir
+/home/joey/Studium/6semester/cpp/u_cpp/A1-2/build/CMakeFiles/edit_cache.dir
+/home/joey/Studium/6semester/cpp/u_cpp/A1-2/build/CMakeFiles/rebuild_cache.dir

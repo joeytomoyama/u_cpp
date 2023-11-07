@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/joey/Studium/6semester/cpp/u_cpp/A1-2/build",
+  "command": "/usr/bin/g++   -g -std=gnu++14 -o CMakeFiles/mein_programm.dir/main.cpp.o -c /home/joey/Studium/6semester/cpp/u_cpp/A1-2/main.cpp",
+  "file": "/home/joey/Studium/6semester/cpp/u_cpp/A1-2/main.cpp"
+}
+]
