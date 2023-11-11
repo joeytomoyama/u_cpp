@@ -3,5 +3,5 @@ project(GETTING_STARTED)
 
 set(CMAKE_CXX_STANDARD 14)
 
-set(SOURCE_FILES main.cpp)
+set(SOURCE_FILES main.cpp test11.cpp)
 add_executable(mein_programm ${SOURCE_FILES})
