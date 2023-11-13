@@ -1,6 +1,8 @@
 #pragma once
 
 #include <array>
+#include <algorithm>
+#include <numeric>
 // #include <string>
 
 template<typename T, int N = 3>
@@ -23,16 +25,10 @@ class Vec {
         }
         
         bool operator==(const Vec& rhs) const {
-            bool isEqual = false;
-            for (int i = 0; i < N; i++) {
-                if (myArray_[i] == rhs[i]) {
-                    isEqual = true;
-                }
-                else {
-                    return false;
-                }
-            }
-            return isEqual;
+            int i = 0;
+            return std::all_of(myArray_.begin(), myArray_.end(), [&rhs, &i](T val) {
+                return val == rhs[i++];
+            });
         }
 
         bool operator!=(const Vec& rhs) const {
@@ -40,9 +36,13 @@ class Vec {
         }
 
         Vec operator+=(const Vec& rhs) {
-            for (int i = 0; i < N; i++) {
-                myArray_[i] += rhs[i];
-            }
+            std::transform(
+                myArray_.begin(),
+                myArray_.end(),
+                rhs.begin(),
+                myArray_.begin(),
+                [](T lhs, T rhs) { return lhs + rhs; }
+            );
             return *this;
         }
 
@@ -54,22 +54,31 @@ class Vec {
 
         Vec operator-() const {
             Vec copy{*this};
-            for (int i = 0; i < N; i++) {
-                copy[i] = -copy[i];
-            }
+            std::transform(
+                copy.begin(),
+                copy.end(),
+                copy.begin(),
+                [](T val){ return -val; }
+            );
             return copy;
         
         }
+
+        auto begin() { return myArray_.begin(); }
+        auto end() { return myArray_.end(); }
+        
+        auto begin() const { return myArray_.begin(); }
+        auto end() const { return myArray_.end(); }
         // std::string toString() const;
 };
 
 template<typename T, int N>
 float dot(const Vec<T, N>& a, const Vec<T, N>& b) {
-    float dotProduct = 0;
-    for (int i = 0; i < N; i++) {
-        dotProduct += a[i] * b[i];
-    }
-    return dotProduct;
+    // return std::transform(
+    //     a.begin(),
+    //     a.end(),
+    //     b.begin(),
+    //     [](T lhs, T rhs){ return lhs * rhs; }
+    // );
+    return std::inner_product(a.begin(), a.end(), b.begin(), 0.0f);
 }
-
-// Vec<T,N>::Vec(std::array<T,N> const& v) : myArray_(v) {}
