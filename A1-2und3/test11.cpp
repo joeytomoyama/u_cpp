@@ -1,6 +1,9 @@
 #include <iostream>
 #include <cassert>
 #include <typeinfo>
+#include <cmath>
+#include <random>
+
 using namespace std;
 
 #include "vec.h"
@@ -110,6 +113,24 @@ void test_Vec() {
         assert( -a == Vec3f({-1,-2,-3}) );
         assert(( dot(a,a) == 1*1+2*2+3*3 ));
         cout << "passed." << endl;
+    }
+
+    {
+        cout << "  length: ";
+        Vec3f a{{1,2,3}};
+        const double epsilon = 1e-6;
+        assert(std::abs(a.length() - std::sqrt(14)) < epsilon);
+        cout << "passed." << endl;
+    }
+
+    {
+        cout << "  printer test: " << endl;
+        Vec3f a{{1, 2, 3}};
+        Vec3f b{{2, 2, 3}};
+        Vec3f c{{11, 12, 13}};
+        std::array vecs = {a, b, a, c};
+        vecPrinter(vecs);
+        cout << endl;
     }
 
     cout << "all Vec tests passed." << endl << endl;   

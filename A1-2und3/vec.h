@@ -3,7 +3,11 @@
 #include <array>
 #include <algorithm>
 #include <numeric>
-// #include <string>
+#include <cmath>
+#include <iostream>
+#include <iterator>
+
+// using namespace std;
 
 template<typename T, int N = 3>
 class Vec {
@@ -66,19 +70,41 @@ class Vec {
 
         auto begin() { return myArray_.begin(); }
         auto end() { return myArray_.end(); }
-        
+
         auto begin() const { return myArray_.begin(); }
         auto end() const { return myArray_.end(); }
         // std::string toString() const;
+
+        double length() const {
+            std::array<T, N> squares;
+            std::transform(
+                myArray_.begin(),
+                myArray_.end(),
+                squares.begin(),
+                [](T val) { return val * val; }
+            );
+            return std::sqrt(
+                std::accumulate(squares.begin(), squares.end(), T(0))
+            );
+        }
 };
 
 template<typename T, int N>
 float dot(const Vec<T, N>& a, const Vec<T, N>& b) {
-    // return std::transform(
-    //     a.begin(),
-    //     a.end(),
-    //     b.begin(),
-    //     [](T lhs, T rhs){ return lhs * rhs; }
-    // );
     return std::inner_product(a.begin(), a.end(), b.begin(), 0.0f);
+}
+
+template<typename Container>
+void vecPrinter(const Container& vecs) {
+    for (const auto& vec : vecs) {
+        std::cout <<
+            vec[0] <<
+            ", " <<
+            vec[1] <<
+            ", " <<
+            vec[2] <<
+            ", l: " <<
+            vec.length() <<
+        std::endl;
+    }
 }
