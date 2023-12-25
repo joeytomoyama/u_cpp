@@ -3,6 +3,7 @@
 // Autor: Hartmut Schirmacher
 
 #include <iostream>
+#include "my_vector.h"
 
 using namespace std;
 
@@ -20,5 +21,16 @@ int main()
 
     cout << "End of tests ----------------------------" << endl;
 
-    return 0;
+	// vector<int> a{0};
+	// a.push_back(1);
+	// a.push_back(2);
+	// a.push_back(3);
+	// a.push_back(4);
+	// a.push_back(5);
+	// a.push_back(6);
+	// a.pop_back();
+	// cout << a.empty() << endl;
+	// cout << a.toString() << endl;
+	// cout << a.at(10) << endl;
+    // return 0;
 }

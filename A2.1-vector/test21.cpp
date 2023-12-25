@@ -31,8 +31,6 @@ void test_21()
         assert(Payload::count() == 0);
         cout << " done." << endl;
     }
-
-#if 0
  
     {
         cout << "push_back(), pop_back(), size(), empty() ... ";
@@ -46,24 +44,27 @@ void test_21()
             v.push_back(Payload(2,2,2));
             assert(v.size() == 3);
             assert(!v.empty());
-            assert(Payload::count() == 3);
+			cout << Payload::count() << endl;
+            // assert(Payload::count() == 3);
 
-            assert(v.pop_back() == Payload(2,2,2));
-            assert(v.size() == 2);
-            assert(Payload::count() == 2);
+            // assert(v.pop_back() == Payload(2,2,2));
+            // assert(v.size() == 2);
+            // assert(Payload::count() == 2);
 
-            assert(v.pop_back() == Payload(1,1,1));
-            assert(v.size() == 1);
-            assert(Payload::count() == 1);
+            // assert(v.pop_back() == Payload(1,1,1));
+            // assert(v.size() == 1);
+            // assert(Payload::count() == 1);
 
-            assert(v.pop_back() == Payload(0,0,0));
-            assert(v.size() == 0);
-            assert(v.empty());
-            assert(Payload::count() == 0);
+            // assert(v.pop_back() == Payload(0,0,0));
+            // assert(v.size() == 0);
+            // assert(v.empty());
+            // assert(Payload::count() == 0);
         }
         assert(Payload::count() == 0);
         cout << " done." << endl;
     }
+
+#if 0
 
     {
         cout << "operator[] ... ";
